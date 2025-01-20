@@ -11,7 +11,7 @@
 # 
 #####################################################################
 #VARIAVEIS
-GitRepo="https://github.com/raphaelmaria/MyAnsible.git"
+GitRepo="https://github.com/raphaelmaria/"
 AnsibleDIR="/etc/ansible"
 #####################################################################
 clear
