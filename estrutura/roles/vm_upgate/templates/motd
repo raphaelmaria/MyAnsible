@@ -1,0 +1,12 @@
+---------------------------------
+           Bionexo S.A.
+
+Hostname.: "{{ ansible_fqdn }}"
+IP Address: "{{ ansible_all_ipv4_addresses }}"
+
+Criado por Raphael Oliveira em Fevereiro de 2025
+
+Processador: "{{ ansible_product_name }}"
+Memoria: "{{ ansible_memtotal_mb }}" MB
+O.S.: "{{ ansible_distribution }}","{{ ansible_distribution_version }}"
+----------------------------------

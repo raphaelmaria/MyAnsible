@@ -1,0 +1,10 @@
+#SPDX-License-Identifier: MIT-0
+---
+
+# Copiando o Templates
+- name: Configurando Tela de Bem Vindo
+  template: src=motd dest=/etc/motd force=yes owner=root group=root
+# tasks file for vm_upgate
+- name: Verificando Repo por Update/Upgrade
+  apt: update_cache=yes upgrade=yes
+  when: ansible_distribution == 'Debian' or ansible_distribution == "Ubuntu"
