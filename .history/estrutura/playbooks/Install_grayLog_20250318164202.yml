@@ -1,0 +1,124 @@
+---
+- name: Install and Configure Graylog on CentOS 8
+  hosts: graylog_servers
+  become: true
+  vars:
+    graylog_version: "5.0"
+    es_cluster_name: "graylog"
+    graylog_http_bind_address: "0.0.0.0:9000"
+    graylog_admin_password: "YourSecurePassword"
+
+  tasks:
+    - name: Update system packages
+      dnf:
+        name: "*"
+        state: latest
+
+    - name: Install Java (OpenJDK 11)
+      dnf:
+        name: java-11-openjdk
+        state: present
+
+    - name: Add MongoDB repository
+      copy:
+        dest: /etc/yum.repos.d/mongodb-org-4.4.repo
+        content: |
+          [mongodb-org-4.4]
+          name=MongoDB Repository
+          baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.4/x86_64/
+          gpgcheck=1
+          enabled=1
+          gpgkey=https://www.mongodb.org/static/pgp/server-4.4.asc
+
+    - name: Install MongoDB
+      dnf:
+        name: mongodb-org
+        state: present
+
+    - name: Enable and start MongoDB
+      systemd:
+        name: mongod
+        enabled: yes
+        state: started
+
+    - name: Add Elasticsearch repository
+      copy:
+        dest: /etc/yum.repos.d/elasticsearch.repo
+        content: |
+          [elasticsearch-7.x]
+          name=Elasticsearch repository for 7.x packages
+          baseurl=https://artifacts.elastic.co/packages/7.x/yum
+          gpgcheck=1
+          gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+          enabled=1
+          autorefresh=1
+          type=rpm-md
+
+    - name: Install Elasticsearch
+      dnf:
+        name: elasticsearch
+        state: present
+
+    - name: Configure Elasticsearch
+      lineinfile:
+        path: /etc/elasticsearch/elasticsearch.yml
+        line: "{{ item }}"
+        create: yes
+      loop:
+        - "cluster.name: {{ es_cluster_name }}"
+        - "action.auto_create_index: false"
+
+    - name: Enable and start Elasticsearch
+      systemd:
+        name: elasticsearch
+        enabled: yes
+        state: started
+
+    - name: Add Graylog repository
+      rpm_key:
+        key: https://packages.graylog2.org/repo/packages/graylog-{{ graylog_version }}-repository_latest.rpm
+        state: present
+      register: graylog_repo_installed
+
+    - name: Install Graylog
+      dnf:
+        name: graylog-server
+        state: present
+      when: graylog_repo_installed is succeeded
+
+    - name: Generate Graylog secret key
+      command: "pwgen -N 1 -s 96"
+      register: graylog_secret
+      changed_when: false
+
+    - name: Hash Graylog admin password
+      command: "echo -n '{{ graylog_admin_password }}' | sha256sum"
+      register: admin_password_hash
+      changed_when: false
+
+    - name: Configure Graylog
+      template:
+        src: graylog_server.conf.j2
+        dest: /etc/graylog/server/server.conf
+        owner: graylog
+        group: graylog
+        mode: '0644'
+
+    - name: Enable and start Graylog
+      systemd:
+        name: graylog-server
+        enabled: yes
+        state: started
+
+    - name: Open firewall ports
+      firewalld:
+        port: "{{ item }}/tcp"
+        permanent: yes
+        state: enabled
+      loop:
+        - 9000
+        - 9200
+        - 27017
+
+    - name: Reload firewall
+      command: firewall-cmd --reload

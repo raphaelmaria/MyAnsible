@@ -1,0 +1,5 @@
+is_master = true
+password_secret = {{ graylog_secret.stdout }}
+root_password_sha2 = {{ admin_password_hash.stdout.split(' ')[0] }}
+http_bind_address = {{ graylog_http_bind_address }}
+elasticsearch_hosts = http://127.0.0.1:9200
