@@ -1,0 +1,24 @@
+#--- Maquina Windows ---
+
+#--- Maquina Linux ---
+
+#--- Maquina MacOS ---
+
+#--- Maquina Android ---
+#--- Maquina iOS ---
+#--- Maquina Virtual ---
+proxmox1 = Proxmox(host='192.168.1.100', user='root@pam', password='<PASSWORD>')
+proxmox2=
+#--- Maquina Virtual Linux ---
+#--- Maquina Virtual MacOS ---
+#--- Maquina Virtual Android ---
+#--- Maquina Virtual iOS ---
+#--- Maquina Virtual Windows ---
+#--- Maquina Virtual Windows 10 ---
+#--- Maquina Virtual Windows 11 ---
+#--- Maquina Virtual Windows Server 2016 ---
+#--- Maquina Virtual Windows Server 2019 ---
+#--- Maquina Virtual Windows Server 2022 ---
+#--- Maquina Virtual Windows Server 2023 ---
+#--- Maquina Virtual Windows Server 2024 ---
+#--- Maquina Virtual Windows Server 2025 ---
