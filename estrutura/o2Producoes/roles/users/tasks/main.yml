@@ -1,0 +1,14 @@
+- name: Criando User RENDER local
+  user:
+    name: "render"
+    password: "o22009render"
+    shell: /bin/bash
+    state: present
+
+- name: Criando User O2 local
+  user:
+    name: "o2"
+    password: "o2"
+    shell: /bin/bash
+    state: present
+

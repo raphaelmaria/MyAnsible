@@ -1,0 +1,8 @@
+---
+- hosts: deploy 
+  roles:
+    - updateos
+    - requisitos
+    #- hostname
+    #- ipaddress
+...

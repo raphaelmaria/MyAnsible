@@ -1,0 +1,94 @@
+- name: Default Begin Setup - Starting Deploy
+  hosts: deployFARM
+  remote_user: root
+  become: yes
+  become_user: root
+  tasks:
+      - name: Remove Softwares Red Hat
+        yum:
+         name: "{{ packages }}"
+         state: absent
+        vars:
+            packages:
+                - cloud-init
+        when: ansible_distribution == "CentOS" or ansible_distribution == 'RedHat'
+
+      - name: Remove Softwares Debian
+        apt:
+         name: "{{ packages }}"
+         state: absent
+        vars:
+          packages:
+                 - cloud-init
+        when: ansible_distribution == "Debian" or ansible_distribution == 'Ubuntu'        
+                  
+      - name: Install New Softwares Red Hat Defaults
+        yum:
+         name: "{{ packages }}"
+         state: latest
+        vars:
+            packages:
+                - dialog
+                - tree
+                - wget
+                - tar
+                - unzip
+                - tcsh
+                - vim
+                - make
+                - gcc
+                - dnf
+                - autoconf
+                - automake
+                - epel-release
+                - cockpit
+                - ipa-client
+                - net-tools
+                - telnet
+                - curl
+                - tcpdump
+
+        when: ansible_distribution == "CentOS" or ansible_distribution == 'RedHat'
+
+      - name: Install New Softwares Debian Defaults
+        apt:
+          name: "{{ packages }}"
+          state: latest
+        vars:
+          packages:
+                - dialog
+                - tree
+                - wget
+                - tar
+                - unzip
+                - tcsh
+                - vim
+                - make
+                - gcc
+                - autoconf
+                - automake
+                - cockpit
+                - ipa-client
+                - net-tools
+                - telnet
+                - curl
+                - tcpdump
+                
+        when: ansible_distribution == "Debian" or ansible_distribution == 'Ubuntu'        
+      
+      # Atualizacao Red Hat Like
+      - name: Update System Red Hat Distro
+        yum: name=* state=latest security=yes
+        when: ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat'
+
+      # Atualizacao Debian Like
+      - name: Update System Debian Distro
+        apt: update_cache=yes upgrade=yes
+        when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+      # Copia de Arquivos Scripts de Configuracao
+      - name: Copia de Scripts Basicos
+        copy: src=/AWXREPO/roles/deployFARM/files/scripto2.sh dest=/root/Downloads force=yes
+      - name: Copia Script Setup COMP O2 
+        copy: src=/AWXREPO/roles/deployFARM/files/setup.CentOS7_Default.sh dest=/root/Downloads force=yes
+...

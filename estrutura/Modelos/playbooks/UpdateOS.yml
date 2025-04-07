@@ -1,0 +1,6 @@
+---
+    - hosts: farmlinux 
+      remote_user: root
+      become: yes
+      become_user: root
+      order

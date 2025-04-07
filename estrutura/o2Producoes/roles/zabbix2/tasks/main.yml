@@ -1,0 +1,46 @@
+- name: Instalando Repositorio Zabbix
+  yum_repository:
+    name: Zabbix Repository Install
+    description: Install Zabbix Repository
+    baseurl: http://repo.zabbix.com/zabbix/5.0/rhel/7/$basearch/debuginfo/
+
+- name: Removendo Instalacao antiga
+  yum:
+    name: "{{ zabbix }}"
+    state: absent
+  vars:
+    zabbix:
+       - zabbix-agent
+       - zabbix-get
+       - zabbix-sender
+
+- name: Instalando Zabbix Agent
+  yum:
+    name: "{{ zabbix }}"
+    state: latest
+  vars:
+      zabbix:
+        - zabbix-agent
+        - zabbix-get
+        - zabbix-sender
+
+- name: Substitui Hostname na Configuracao
+  replace:
+    path: /etc/zabbix/zabbix_agentd.conf
+    after: 'Hostname="{{ ansible_default_ipv4 }}"'
+    regexp: 'Hostname="{{ ansible_default_ipv4 }}"'
+    replace: 'Hostname="{{ ansible_fqdn }}"'
+
+- name: Substitui IP SERVER na Configuracao
+  replace:
+    path: /etc/zabbix/zabbix_agentd.conf
+    after: 'Server=127.0.0.1'
+    regexp: 'Server=127.0.0.1'
+    replace: 'Server=192.168.8.4"'
+
+- name: Configurando Servidor Zabbix
+  replace:
+    path: /etc/zabbix/zabbix_agentd.conf
+    after: 'ServerActive=192.168.8.4'
+    regexp: 'ServerActive=192.168.8.4'
+    replace: 'ServerActive=127.0.0.1'

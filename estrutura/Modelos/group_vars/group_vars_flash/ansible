@@ -1,0 +1,8 @@
+ansible_ssh_port: 22
+ansible_ssh_user: pi
+ansible_ssh_pass: password
+ansible_become: yes
+ansible_become_method: sudo
+ansible_become_user: pi
+#ansible_become_pass: password
+ansible_connection: ssh

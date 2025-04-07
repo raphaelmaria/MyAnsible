@@ -1,0 +1,43 @@
+---
+# tasks file for grafana
+- name: Install Minimal - Grafana Dashboard
+  yum:
+  name: "{ packages }"
+    state: latest
+  vars:
+    packages:
+        - dialog
+        - tree
+        - tcsh
+        - make
+        - ansible
+        - lshw
+        - pciutils
+        - net-tools
+        - vim
+        - dkms
+        - wget
+        - git
+        - epel-release
+        - ipa-client
+        - dialog
+        - tar
+        - unzip
+        - gcc
+        - cockpit
+  when: ansible_distribution == "CentOS" or ansible_distribution == "RedHat"
+  
+- name: Full Update OS
+  yum:
+    name: Install Updates OS CentOS-RedHat
+    state: latest
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat'
+  
+- name: Copy Install File Grafana Server
+  copy: src='grafana6_Install.rpm' dest=/DevOps/Grafana/Files force=yes
+  
+- name: Install - Grafana Server
+  apt_rpm:
+    pkg: /DevOps/Grafana/Files/grafana6_Install.rpm
+    state: present
+

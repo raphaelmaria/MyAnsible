@@ -1,0 +1,7 @@
+---
+- name: Instalando Zabbix Agent 
+  hosts: farmlinux 
+  order: sorted
+  roles:
+   - zabbix
+...

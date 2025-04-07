@@ -1,0 +1,12 @@
+---
+# tasks file for roles/mac_setup
+- name: Instalando Slack
+  shell: sudo bash ./mac_install_slack.sh
+
+- name: Instalando Apex
+  shell: sudo bash ./mac_install_apex.sh
+
+- name: Download and Install System Updates
+  shell: sudo softwareupdate -d -i --background --force --agree-to-license
+
+...

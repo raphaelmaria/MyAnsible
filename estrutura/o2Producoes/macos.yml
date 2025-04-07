@@ -1,0 +1,6 @@
+---
+- hosts: MacOSX
+  roles:
+    - geerlingguy.homebrew
+    - elliotweiser.osx-command-line-tools
+...

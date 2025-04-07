@@ -1,0 +1,106 @@
+- name: Default Begin Setup - Starting Deploy
+  hosts: deploy
+  remote_user: root
+  become: yes
+  become_user: root
+  tasks:
+      - name: Remove Softwares Red Hat
+        yum:
+         name: "{{ packages }}"
+         state: absent
+        vars:
+            packages:
+                - cloud-init
+        when: ansible_distribution == "CentOS" or ansible_distribution == 'RedHat'
+
+      - name: Remove Softwares Debian
+        apt:
+         name: "{{ packages }}"
+         state: absent
+        vars:
+          packages:
+                 - cloud-init
+        when: ansible_distribution == "Debian" or ansible_distribution == 'Ubuntu'        
+                  
+      - name: Install New Softwares Red Hat Defaults
+        yum:
+         name: "{{ packages }}"
+         state: latest
+        vars:
+            packages:
+                - dialog
+                - tree
+                - wget
+                - tar
+                - unzip
+                - tcsh
+                - vim
+                - make
+                - gcc
+                - dnf
+                - autoconf
+                - automake
+                - epel-release
+                - cockpit
+                - ipa-client
+                - net-tools
+                - telnet
+                - curl
+                - tcpdump
+
+        when: ansible_distribution == "CentOS" or ansible_distribution == 'RedHat'
+
+      - name: Install New Softwares Debian Defaults
+        apt:
+          name: "{{ packages }}"
+          state: latest
+        vars:
+          packages:
+                - dialog
+                - tree
+                - wget
+                - tar
+                - unzip
+                - tcsh
+                - vim
+                - make
+                - gcc
+                - autoconf
+                - automake
+                - cockpit
+                - ipa-client
+                - net-tools
+                - telnet
+                - curl
+                - tcpdump
+                
+        when: ansible_distribution == "Debian" or ansible_distribution == 'Ubuntu'        
+      
+      # Atualizacao Red Hat Like
+      - name: Update System Red Hat Distro
+        yum: name=* state=latest security=yes
+        when: ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat'
+
+      # Atualizacao Debian Like
+      - name: Update System Debian Distro
+        apt: update_cache=yes upgrade=yes
+        when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+      # Copia de Arquivos Scripts de Configuracao
+      - name: Copiando Script de Configuração  O2 COMP
+        copy: src=/AWXREPO/roles/deploy/files/deploy.Centos7_WorkstationO2.sh dest=/scripts force=yes
+
+      - name: Copiando Script de Automount NFS
+        copy: src=/AWXREPO/roles/deploy/files/setup.Centos_Automount.v2.sh dest=/scripts force=yes
+
+      - name: Copiando Script de Configuracao inicial RedHat
+        copy: src=/AWXREPO/roles/deploy/files/setup.Centos_StartConfig.sh dest=/scripts force=yes
+
+      - name: Copiando Script de Configuracao inicial Debian
+        copy: src=/AWXREPO/roles/deploy/files/setup.Debian_StartConfig.sh dest=/scripts force=yes
+
+      - name: Copiando Script de configuração do ONIX
+        copy: src=/AWXREPO/roles/deploy/files/setup.LibraryONIX.sh dest=/scripts force=yes
+
+      - name: Copiando Script do UIRA
+        copy: src=/AWXREPO/roles/deploy/files/update123.sh dest=/scripts force=yes

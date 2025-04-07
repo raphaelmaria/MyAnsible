@@ -1,0 +1,7 @@
+---
+# tasks file for mac_google_drive
+- name: INSTALACAO DE GOOGLE netapp_e_drive_firmware:
+  hosts: macos
+  tasks:
+    shell: sudo /usr/bin/bash ./install_google_drive.sh
+...

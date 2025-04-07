@@ -1,0 +1,13 @@
+-----------------------------------------------------
+                VM TEST - RAPHAEL
+
+Hostname.: "{{ ansible_fqdn }}"
+Endereco IP.: "{{ ansible_all_ipv4_addresses }}"
+
+Acesso WEB: https://"{{ ansible_all_ipv4_addresses }}":9090
+Criado por Raphael Maria em Julho de 2020
+
+OS.: "{{ ansible_distribution }}","{{ ansible_distribution_version }}"
+Processador: "{{ ansible_product_name }}"
+Memoria: "{{ ansible_memtotal_mb }}" MB 
+----------------------------------------------------

@@ -1,0 +1,564 @@
+192.168.8.14 | FAILED | rc=1 >>
+The ZFS modules are not loaded.
+Try running '/sbin/modprobe zfs' as root to load them.non-zero return code
+192.168.8.3 | CHANGED | rc=0 >>
+  pool: Storage
+ state: DEGRADED
+status: One or more devices are faulted in response to persistent errors.
+	Sufficient replicas exist for the pool to continue functioning in a
+	degraded state.
+action: Replace the faulted device, or use 'zpool clear' to mark the device
+	repaired.
+  scan: resilvered 103G in 2h6m with 0 errors on Mon Dec  2 16:16:01 2019
+config:
+
+	NAME                                        STATE     READ WRITE CKSUM
+	Storage                                     DEGRADED     0     0     0
+	  raidz2-0                                  DEGRADED     0     0     0
+	    scsi-3600605b000f904d01c67c82312dda4ca  ONLINE       0     0     0
+	    scsi-3600605b000f904d01c67c82312de61f1  ONLINE       4     0     0
+	    scsi-3600605b000f904d01c67c82312df2147  ONLINE       0     0     0
+	    scsi-3600605b000f904d01c67c82312dfde56  FAULTED      0    75    46  too many errors
+	    scsi-3600605b000f904d01c67c82312e09bae  ONLINE       0     0     0
+	    scsi-3600605b000f904d01c67c82312e158f0  ONLINE       0     0     0
+	    scsi-3600605b000f904d01c67c82312e21674  ONLINE       0     0     0
+	    scsi-3600605b000f904d01c67c82312e2d374  ONLINE       0     0     0
+
+errors: No known data errors
+192.168.8.2 | CHANGED | rc=0 >>
+  pool: Storage
+ state: ONLINE
+  scan: none requested
+config:
+
+	NAME                                            STATE     READ WRITE CKSUM
+	Storage                                         ONLINE       0     0     0
+	  raidz2-0                                      ONLINE       0     0     0
+	    ata-Hitachi_HDS724040ALE640_PK2331PAG27U7T  ONLINE       0     0     0
+	    ata-Hitachi_HDS724040ALE640_PK1331PAG6JLXS  ONLINE       0     0     0
+	    ata-Hitachi_HDS724040ALE640_PK1331PAG99KGS  ONLINE       0     0     0
+	    ata-Hitachi_HDS724040ALE640_PK2331PAG65YST  ONLINE       0     0     0
+	    ata-Hitachi_HDS724040ALE640_PK2331PAG6776T  ONLINE       0     0     0
+	    ata-Hitachi_HDS724040ALE640_PK2331PAG677DT  ONLINE       0     0     0
+	    ata-Hitachi_HDS724040ALE640_PK2331PAG4MGZT  ONLINE       0     0     0
+	    ata-Hitachi_HDS724040ALE640_PK1331PAG9JZNS  ONLINE       0     0     0
+
+errors: No known data errors
+192.168.8.11 | CHANGED | rc=0 >>
+  pool: Storage
+ state: ONLINE
+  scan: none requested
+config:
+
+	NAME                                            STATE     READ WRITE CKSUM
+	Storage                                         ONLINE       0     0     0
+	  raidz2-0                                      ONLINE       0     0     0
+	    ata-Hitachi_HDS724040ALE640_PK2331PAG27U7T  ONLINE       0     0     0
+	    ata-Hitachi_HDS724040ALE640_PK1331PAG6JLXS  ONLINE       0     0     0
+	    ata-Hitachi_HDS724040ALE640_PK1331PAG99KGS  ONLINE       0     0     0
+	    ata-Hitachi_HDS724040ALE640_PK2331PAG65YST  ONLINE       0     0     0
+	    ata-Hitachi_HDS724040ALE640_PK2331PAG6776T  ONLINE       0     0     0
+	    ata-Hitachi_HDS724040ALE640_PK2331PAG677DT  ONLINE       0     0     0
+	    ata-Hitachi_HDS724040ALE640_PK2331PAG4MGZT  ONLINE       0     0     0
+	    ata-Hitachi_HDS724040ALE640_PK1331PAG9JZNS  ONLINE       0     0     0
+
+errors: No known data errors
+192.168.8.7 | CHANGED | rc=0 >>
+  pool: Storage
+ state: ONLINE
+  scan: none requested
+config:
+
+	NAME                        STATE     READ WRITE CKSUM
+	Storage                     ONLINE       0     0     0
+	  raidz2-0                  ONLINE       0     0     0
+	    scsi-35000c50055cd8dff  ONLINE       0     0     0
+	    scsi-35000c50055cda7f7  ONLINE       0     0     0
+	    scsi-35000c50055cdaa7f  ONLINE       0     0     0
+	    scsi-35000c50055cdb1ef  ONLINE       0     0     0
+	    scsi-35000c50055cdbcf3  ONLINE       0     0     0
+	    scsi-35000c50055cdc01f  ONLINE       0     0     0
+	    scsi-35000c50055cdc13f  ONLINE       0     0     0
+	    scsi-35000c50055cdc227  ONLINE       0     0     0
+	    scsi-35000c50055cdc96f  ONLINE       0     0     0
+	  raidz2-1                  ONLINE       0     0     0
+	    scsi-35000c50055cdcb1f  ONLINE       0     0     0
+	    scsi-35000c50055cdccd7  ONLINE       0     0     0
+	    scsi-35000c50055cdcd8f  ONLINE       0     0     0
+	    scsi-35000c50055cdd413  ONLINE       0     0     0
+	    scsi-35000c50055ce0137  ONLINE       0     0     0
+	    scsi-35000c50055ce0383  ONLINE       0     0     0
+	    scsi-35000c50055ce77f3  ONLINE       0     0     0
+	    scsi-35000c50055ce8ad7  ONLINE       0     0     0
+	    scsi-35000c50055ceb053  ONLINE       0     0     0
+	  raidz2-2                  ONLINE       0     0     0
+	    scsi-35000c50055ceb16b  ONLINE       0     0     0
+	    scsi-35000c50055ceb3eb  ONLINE       0     0     0
+	    scsi-35000c50055cebb8f  ONLINE       0     0     0
+	    scsi-35000c50055cecd27  ONLINE       0     0     0
+	    scsi-35000c50055cedcf3  ONLINE       0     0     0
+	    scsi-35000c50055cee13f  ONLINE       0     0     0
+	    scsi-35000c50055ceeb23  ONLINE       0     0     0
+	    scsi-35000c50055ceec7b  ONLINE       0     0     0
+	    scsi-35000c50055ceeed3  ONLINE       0     0     0
+	  raidz2-3                  ONLINE       0     0     0
+	    scsi-35000c50055cef61f  ONLINE       0     0     0
+	    scsi-35000c50055cef80f  ONLINE       0     0     0
+	    scsi-35000c50055cef87f  ONLINE       0     0     0
+	    scsi-35000c50055cefc2b  ONLINE       0     0     0
+	    scsi-35000c50055ceffff  ONLINE       0     0     0
+	    scsi-35000c50055cf1b1f  ONLINE       0     0     0
+	    scsi-35000c50055cf1ffb  ONLINE       0     0     0
+	    scsi-35000c50055cf2e33  ONLINE       0     0     0
+	    scsi-35000c50055cf380b  ONLINE       0     0     0
+
+errors: No known data errors
+192.168.8.19 | CHANGED | rc=0 >>
+  pool: Storage
+ state: ONLINE
+  scan: none requested
+config:
+
+	NAME                                   STATE     READ WRITE CKSUM
+	Storage                                ONLINE       0     0     0
+	  raidz2-0                             ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZCH0265Z  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV05MLS  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV08TMW  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZCH0E3TW  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV06EYJ  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV03WZ4  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV08LC3  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZCH099P6  ONLINE       0     0     0
+	  raidz2-1                             ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV064XC  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV098BE  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZCH0ETHZ  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV06FH2  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV04W63  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV08N3F  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZCH0BCC0  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV069G5  ONLINE       0     0     0
+	  raidz2-2                             ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV00TGN  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV06YLZ  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV05BNC  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV08SMZ  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZCH0E2BX  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV06BCR  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV01GJF  ONLINE       0     0     0
+	    ata-ST10000DM0004-2GR11L_ZJV076CD  ONLINE       0     0     0
+
+errors: No known data errors
+192.168.8.25 | CHANGED | rc=0 >>
+  pool: Storage
+ state: ONLINE
+status: One or more devices has experienced an unrecoverable error.  An
+	attempt was made to correct the error.  Applications are unaffected.
+action: Determine if the device needs to be replaced, and clear the errors
+	using 'zpool clear' or replace the device with 'zpool replace'.
+   see: http://zfsonlinux.org/msg/ZFS-8000-9P
+  scan: none requested
+config:
+
+	NAME                                  STATE     READ WRITE CKSUM
+	Storage                               ONLINE       0     0     0
+	  raidz2-0                            ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D02FE6  ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D0368P  ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D036Z1  ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D02E9N  ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D02SJ9  ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D02E5K  ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D030EB  ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D02F8G  ONLINE       5     0     1
+	  raidz2-1                            ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D02F3T  ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D036M9  ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D03197  ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D02V6N  ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D02E2E  ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D02F3A  ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D02F24  ONLINE       1     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D02ETJ  ONLINE       0     0     0
+	  raidz2-2                            ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D00LBJ  ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D00LEY  ONLINE       0     0     0
+	    ata-ST6000DX000-1H217Z_Z4D05PP6   ONLINE       0     0     0
+	    ata-ST6000DX000-1H217Z_Z4D05WDR   ONLINE       0     0     0
+	    ata-ST6000DX000-1H217Z_Z4D05VWX   ONLINE       0     0     0
+	    ata-ST6000DX000-1H217Z_Z4D060EQ   ONLINE       1     0     0
+	    ata-ST6000DX000-1H217Z_Z4D05V03   ONLINE       0     0     0
+	    ata-ST6000DX000-1H217Z_Z4D07BGT   ONLINE       0     0     0
+
+errors: No known data errors
+192.168.8.22 | CHANGED | rc=0 >>
+  pool: Storage
+ state: ONLINE
+status: One or more devices has experienced an unrecoverable error.  An
+	attempt was made to correct the error.  Applications are unaffected.
+action: Determine if the device needs to be replaced, and clear the errors
+	using 'zpool clear' or replace the device with 'zpool replace'.
+   see: http://zfsonlinux.org/msg/ZFS-8000-9P
+  scan: none requested
+config:
+
+	NAME                                   STATE     READ WRITE CKSUM
+	Storage                                ONLINE       0     0     0
+	  raidz2-0                             ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNN97Y  ONLINE       1     0     0
+	    ata-HGST_HDN726060ALE610_NAHN5EBX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNGD3X  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNRG8X  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNN6TY  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNKTSX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHP58EX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHN8XMX  ONLINE       0     0     0
+	  raidz2-1                             ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNLAPX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNXVXX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNH8AX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNUVLX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHN8E7Y  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNH79X  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNH7SX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNLKSX  ONLINE       0     0     0
+	  raidz2-2                             ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNKZRX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNMJPY  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHN35JY  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNRHPX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNDLJX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHN37BY  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNBYMY  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHND23Y  ONLINE       0     0     0
+
+errors: No known data errors
+192.168.8.26 | CHANGED | rc=0 >>
+  pool: Storage
+ state: ONLINE
+  scan: resilvered 1.50K in 0 days 00:00:01 with 0 errors on Wed Aug 19 20:02:32 2020
+config:
+
+	NAME                                            STATE     READ WRITE CKSUM
+	Storage                                         ONLINE       0     0     0
+	  raidz2-0                                      ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY03327382   ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY02863871   ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY03044500   ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY03054025   ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY03247310   ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY03376869   ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY02856547   ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY03254645   ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY02947269   ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY03349453   ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY03411401   ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY03178488   ONLINE       0     0     0
+	  raidz2-1                                      ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY02730533   ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY02652091   ONLINE       0     0     0
+	    ata-ST32000542AS_6XW1QWMC                   ONLINE       0     0     0
+	    ata-Hitachi_HDS723020BLA642_MN5220F327KYJK  ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY03829377   ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY02890826   ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY03075329   ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY02937438   ONLINE       0     0     0
+	    ata-TOSHIBA_MG04ACA200NY_9812K2X0F7EE       ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY03166836   ONLINE       0     0     0
+	    ata-WDC_WD2002FAEX-007BA0_WD-WMAY03137963   ONLINE       0     0     0
+	    ata-ST32000542AS_6XW1MZRR                   ONLINE       0     0     0
+
+errors: No known data errors
+192.168.8.20 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: kex_exchange_identification: Connection closed by remote host", 
+    "unreachable": true
+}
+192.168.8.31 | CHANGED | rc=0 >>
+  pool: Storage
+ state: ONLINE
+  scan: resilvered 4.33T in 69h46m with 0 errors on Sun Sep  2 09:20:05 2018
+config:
+
+	NAME                                   STATE     READ WRITE CKSUM
+	Storage                                ONLINE       0     0     0
+	  raidz2-0                             ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAG1BXRP  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAG18SGP  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAG18WDP  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAG1DE3P  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAG16JMP  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAG195PP  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAG1DJRP  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAG18BXP  ONLINE       0     0     0
+	  raidz2-1                             ONLINE       0     0     0
+	    ata-ST6000NM0004-1FT17Z_Z4D0HWAF   ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAG1BBPP  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAG173EP  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAG1907P  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAG1976P  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAG0HD4P  ONLINE       0     0     0
+	    ata-ST6000VN0041-2EL11C_ZA1B0JSH   ONLINE       0     0     0
+	    ata-ST6000DX000-1H217Z_Z4D05WCT    ONLINE       0     0     0
+	  raidz2-2                             ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGG1YJX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGE0SLY  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGEXLTY  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGALX1Y  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGETT2X  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCG23V4J  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGEY99Y  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGEYAYY  ONLINE       0     0     0
+
+errors: No known data errors
+192.168.8.32 | CHANGED | rc=0 >>
+  pool: Storage
+ state: ONLINE
+  scan: none requested
+config:
+
+	NAME                                   STATE     READ WRITE CKSUM
+	Storage                                ONLINE       0     0     0
+	  raidz2-0                             ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGT6ADY  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGUX2NY  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGSP88Y  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGURLLY  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGUJ8JY  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGU1E2Y  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGAHJMY  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGAJ7JY  ONLINE       0     0     0
+	  raidz2-1                             ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGUK8RX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGPMJZY  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGUR11Y  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGAJ8BY  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGUWDMX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGUTN5X  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAGUX94Y  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAG9W2MY  ONLINE       0     0     0
+	  raidz2-2                             ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHEN7UX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCG9746S  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHRG4DX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNMDHY  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCG9BMSS  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHEP29X  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCG9AZXS  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHPS9WY  ONLINE       0     0     0
+
+errors: No known data errors
+192.168.8.37 | CHANGED | rc=0 >>
+  pool: Storage
+ state: ONLINE
+status: Some supported features are not enabled on the pool. The pool can
+	still be used, but some features are unavailable.
+action: Enable all features using 'zpool upgrade'. Once this is done,
+	the pool may no longer be accessible by software that does not support
+	the features. See zpool-features(5) for details.
+  scan: resilvered 795G in 0 days 01:55:01 with 0 errors on Fri Jul 17 18:47:57 2020
+config:
+
+	NAME                                         STATE     READ WRITE CKSUM
+	Storage                                      ONLINE       0     0     0
+	  raidz2-0                                   ONLINE       0     0     0
+	    ata-TOSHIBA_HDWE160_36S7K77EF56D         ONLINE       0     0     0
+	    ata-ST6000DM001-1YW11C_ZA1078DK          ONLINE       0     0     0
+	    ata-TOSHIBA_HDWE160_26S6K46UF56D         ONLINE       0     0     0
+	    ata-MARSHAL_MAL36000NS-T72_Z587K0L1F57C  ONLINE       0     0     0
+	    ata-TOSHIBA_HDWE160_26R1K7MFF56D         ONLINE       0     0     0
+	    ata-MARSHAL_MAL36000NS-T72_95K2K01JF57C  ONLINE       0     0     0
+	    ata-TOSHIBA_HDWE160_26S1Y056F56D         ONLINE       0     0     0
+	    ata-ST6000DM001-1YW11C_ZA105PC2          ONLINE       0     0     0
+	  raidz2-1                                   ONLINE       0     0     0
+	    ata-MARSHAL_MAL36000NS-T72_26P6K062F57C  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_K1G4KYRB        ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_K1G456TB        ONLINE       0     0     0
+	    ata-ST6000NM0024-1HT17Z_Z4D01L7D         ONLINE       0     0     0
+	    ata-ST6000DM001-1XY17Z_Z4D2WN7Z          ONLINE       0     0     0
+	    ata-MARSHAL_MAL36000NS-T72_Z526K03KF57C  ONLINE       0     0     0
+	    ata-TOSHIBA_HDWE160_3681K87PF56D         ONLINE       0     0     0
+	    ata-ST6000DM001-1XY17Z_S4D0BLHN          ONLINE       0     0     0
+	  raidz2-2                                   ONLINE       0     0     0
+	    ata-MARSHAL_MAL36000NS-T72_95N2K02RF57C  ONLINE       0     0     0
+	    ata-MARSHAL_MAL36000NS-T72_26P3K0C4F57C  ONLINE       0     0     0
+	    ata-ST6000VN0041-2EL11C_ZA1BD7CK         ONLINE       0     0     0
+	    ata-MARSHAL_MAL36000NS-T72_26P6K05TF57C  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNSBMX        ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCGTGRZS        ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_K1G3B78B        ONLINE       0     0     0
+	    ata-ST6000DM001-1YW11C_ZA103759          ONLINE       0     0     0
+
+errors: No known data errors
+192.168.8.38 | CHANGED | rc=0 >>
+  pool: Storage
+ state: ONLINE
+  scan: none requested
+config:
+
+	NAME                                   STATE     READ WRITE CKSUM
+	Storage                                ONLINE       0     0     0
+	  raidz2-0                             ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_K1G00EUB  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_K1G3GUZB  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_K1G4BXEB  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCGSBNUS  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCGSW5RS  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCGT2UPS  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_K1G2M1PB  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_K1G3RWHB  ONLINE       0     0     0
+	  raidz2-1                             ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHR7PKY  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCGS2DPS  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCGSE5DS  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCGSW7GS  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCGT2VAS  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_K1G388RB  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_K1G3SL6B  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCGS2ENS  ONLINE       0     0     0
+	  raidz2-2                             ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCGSE7WS  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCGT11MS  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCGT2W8S  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_K1G3E38B  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_K1G3SX8B  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCGS5BMS  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCGSEGMS  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCGT25WS  ONLINE       0     0     0
+
+errors: No known data errors
+192.168.8.48 | CHANGED | rc=0 >>
+  pool: Storage
+ state: ONLINE
+  scan: none requested
+config:
+
+	NAME                                 STATE     READ WRITE CKSUM
+	Storage                              ONLINE       0     0     0
+	  raidz2-0                           ONLINE       0     0     0
+	    ata-ST2000DM001-1CH164_S1E2BH0B  ONLINE       0     0     0
+	    ata-ST2000DM001-1CH164_S1E2C85J  ONLINE       0     0     0
+	    ata-ST2000DM001-1CH164_S1E2CESJ  ONLINE       0     0     0
+	    ata-ST2000DM001-1CH164_Z1E5GYR6  ONLINE       0     0     0
+	    ata-ST2000DM001-1CH164_Z1E5QL3M  ONLINE       0     0     0
+	    ata-ST2000DM001-1CH164_Z1E5QW1F  ONLINE       0     0     0
+	    ata-ST2000DM001-1CH164_Z1E6RVRN  ONLINE       0     0     0
+	    ata-ST2000DM001-1ER164_Z4Z29MV0  ONLINE       0     0     0
+	  raidz2-1                           ONLINE       0     0     0
+	    ata-ST2000DM006-2DM164_ZA508AHB  ONLINE       0     0     0
+	    ata-ST32000542AS_5XW06JEB        ONLINE       0     0     0
+	    ata-ST32000542AS_6XW042R1        ONLINE       0     0     0
+	    ata-ST32000542AS_6XW04W5S        ONLINE       0     0     0
+	    ata-ST32000542AS_6XW0706T        ONLINE       0     0     0
+	    ata-ST32000542AS_6XW08AZX        ONLINE       0     0     0
+	    ata-ST32000542AS_6XW0A32X        ONLINE       0     0     0
+	    ata-ST32000542AS_6XW1ED2V        ONLINE       0     0     0
+
+errors: No known data errors
+192.168.8.39 | CHANGED | rc=0 >>
+  pool: Storage
+ state: ONLINE
+  scan: none requested
+config:
+
+	NAME        STATE     READ WRITE CKSUM
+	Storage     ONLINE       0     0     0
+	  raidz2-0  ONLINE       0     0     0
+	    sdb     ONLINE       0     0     0
+	    sdc     ONLINE       0     0     0
+	    sdd     ONLINE       0     0     0
+	    sde     ONLINE       0     0     0
+	    sdf     ONLINE       0     0     0
+	    sdg     ONLINE       0     0     0
+	    sdh     ONLINE       0     0     0
+	    sdi     ONLINE       0     0     0
+	  raidz2-1  ONLINE       0     0     0
+	    sdj     ONLINE       0     0     0
+	    sdk     ONLINE       0     0     0
+	    sdl     ONLINE       0     0     0
+	    sdm     ONLINE       0     0     0
+	    sdn     ONLINE       0     0     0
+	    sdo     ONLINE       0     0     0
+	    sdp     ONLINE       0     0     0
+	    sdq     ONLINE       0     0     0
+	  raidz2-2  ONLINE       0     0     0
+	    sdr     ONLINE       0     0     0
+	    sds     ONLINE       0     0     0
+	    sdt     ONLINE       0     0     0
+	    sdu     ONLINE       0     0     0
+	    sdv     ONLINE       0     0     0
+	    sdw     ONLINE       0     0     0
+	    sdx     ONLINE       0     0     0
+	    sdy     ONLINE       0     0     0
+
+errors: No known data errors
+192.168.8.69 | CHANGED | rc=0 >>
+  pool: storage
+ state: ONLINE
+  scan: none requested
+config:
+
+	NAME        STATE     READ WRITE CKSUM
+	storage     ONLINE       0     0     0
+	  raidz1-0  ONLINE       0     0     0
+	    sda     ONLINE       0     0     0
+	    sdb     ONLINE       0     0     0
+	    sdc     ONLINE       0     0     0
+	    sdd     ONLINE       0     0     0
+	    sde     ONLINE       0     0     0
+	    sdf     ONLINE       0     0     0
+	    sdg     ONLINE       0     0     0
+
+errors: No known data errors
+192.168.8.81 | FAILED | rc=2 >>
+[Errno 2] No such file or directory: b'zpool': b'zpool'
+192.168.8.86 | CHANGED | rc=0 >>
+  pool: Storage
+ state: ONLINE
+  scan: resilvered 4.89T in 35h26m with 0 errors on Fri Aug  4 03:49:10 2017
+config:
+
+	NAME                                   STATE     READ WRITE CKSUM
+	Storage                                ONLINE       0     0     0
+	  raidz2-0                             ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCG9JP7S  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHVJDYX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCG9NRPS  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHEN6LX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHWMLUX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCGD3XWS  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCG9N09S  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHVAHUX  ONLINE       0     0     0
+	  raidz2-1                             ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHR6JEX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHWLX3Y  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHWL8ZY  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNKE5X  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNPEEX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCG9KN5S  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE614_K1GU6XBD  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHVGU3X  ONLINE       0     0     0
+	  raidz2-2                             ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHN319Y  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHWMNAX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCG902RS  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCGE0A0S  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHUST6X  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHEP1HX  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NAHNKM1X  ONLINE       0     0     0
+	    ata-HGST_HDN726060ALE610_NCG99SHS  ONLINE       0     0     0
+
+errors: No known data errors
+192.168.8.119 | FAILED | rc=2 >>
+[Errno 2] No such file or directory: b'zpool': b'zpool'
+192.168.8.67 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: kex_exchange_identification: Connection closed by remote host", 
+    "unreachable": true
+}
+192.168.8.35 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Connection timed out during banner exchange", 
+    "unreachable": true
+}

@@ -1,0 +1,41 @@
+---
+- name: Playbook - Setup New Host
+  hosts: macos_flash
+  tasks:
+    - name: Copy Apps Defaults for Intel
+      copy: src="/home/pi/roles/mac_flash/files/INTEL/Google Chrome.app" dest=/Applications/
+      copy: src="/home/pi/roles/mac_flash/files/INTEL/Slack.app" dest=/Applications/
+      copy: src="/home/pi/roles/mac_flash/files/INTEL/AnyDesk.app" dest=/Applications/
+        # when: ansible_processor_vcpu == "8"
+
+        # - name: Copy Apps Defaults for M1
+        # copy: src="/home/pi/roles/mac_flash/files/M1/Google Chrome.app" dest=/Applications/
+        # copy: src="/home/pi/roles/mac_flash/files/M1/AnyDesk.app" dest=/Applications/
+        #copy: src="/home/pi/roles/mac_flash/files/M1/Slack.app" dest=/Applications/
+        #when: ansible_processor_vcpu =< "7"
+
+    - name: Pre Setting Hide Flash Local User
+      shell: sudo dscl . create /Users/flash IsHidden 1
+
+    - name: Set Hidden Flash Local User
+      shell: sudo chflags hidden /Users/flash
+
+    - name: Copy Install AWS VPN Client
+      copy: src=/home/pi/roles/mac_flash/files/M1/AWS_VPN_Client.pkg dest=/Users/flash/Downloads
+     
+    - name: Install AWS VPN Client
+      shell: sudo installer -pkg /Users/flash/Downloads/AWS_VPN_client.pkg
+
+    - name: Copy Install Google Drive
+      copy: src=/home/pi/roles/mac_flash/files/M1/GoogleDrive.pkg dest=/Users/flash/Downloads 
+      
+    - name: Install Google Drive
+      shell: sudo installer -pkg /Users/flash/Downloads/GoogleDrive.pkg
+
+    - name: Copy Profile JumpCloud Enroll
+      copy: src=/home/pi/roles/mac_flash/files/profile_jc.mobileconfig dest=/Users/flash/Downloads
+      
+    - name: Install JumpCloud MDM Profile  
+      shell: sudo /Users/flash/Downloads/profile_jc.mobileconfig
+            
+...

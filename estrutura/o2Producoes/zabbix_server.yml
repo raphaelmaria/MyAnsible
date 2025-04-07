@@ -1,0 +1,7 @@
+---
+- name: Instalando Zabbix Agent 
+  hosts: zabbixserver  
+  order: sorted
+  roles:
+   - dj-wasabi.zabbix-server
+...

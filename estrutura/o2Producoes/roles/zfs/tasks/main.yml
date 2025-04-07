@@ -1,0 +1,34 @@
+---
+- name: Deploy - Install Epel-Release Repository
+  yum_repository:
+    name: epel
+    description: EPEL YUM repo
+    baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+    
+
+- name: Deploy - Install ZFS Repository
+  yum_repository:
+    name: ZFS Repository Install
+    description: Install ZFS Repository
+    baseurl: http://download.zfsonlinux.org/epel/zfs-release.el8_1.noarch.rpm
+
+- name: Setup ZFS Repository - Disable ZFS
+  lineinfile:
+    file: /etc/yum.repos.d/zfs.repo
+    dest: 'enabled=1'
+    regexp: '^enabled=1'
+    replace: 'enabled=0'
+
+- name: Setup ZFS Repository - Disable ZFS
+  replace:
+    path: /etc/yum.repos.d/zfs.repo
+    after: 'enabled=0'
+    regexp: '^enabled=0'
+    replace: 'enabled=1'
+  
+- name: Deploy - Install ZFS Install
+  yum:
+    name: zfs.x86_64
+    state: latest 
+
+...

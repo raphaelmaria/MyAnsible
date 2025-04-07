@@ -1,0 +1,9 @@
+---
+- name: Instalando GLPI Server 
+  hosts: glpiserver  
+  roles:
+  - requisitos
+  - updateos
+  - adfinis-sygroup.apache
+  - supertarto.glpi
+...

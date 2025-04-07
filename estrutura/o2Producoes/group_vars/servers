@@ -1,0 +1,8 @@
+ansible_ssh_port: 22
+ansible_ssh_user: root
+ansible_ssh_pass: O22020@LnXti!
+ansible_become: yes
+ansible_become_method: sudo
+ansible_become_user: root
+ansible_become_pass: O22020@LnXti!
+ansible_connection: ssh

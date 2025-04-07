@@ -1,0 +1,8 @@
+- name: Default install Zabbix Agent - Starting Deploy
+  hosts: farmlinux 
+  remote_user: root
+  become: yes
+  become_user: root
+  roles:
+    - zabbix2 
+...

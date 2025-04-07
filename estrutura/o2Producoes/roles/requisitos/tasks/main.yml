@@ -1,0 +1,55 @@
+# Instalar Requisitos
+- name: Instalacao de Requisitos - REDHAT Family
+  yum:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+        - dialog
+        - tree
+        - tcsh
+        - make
+        - ansible
+        - lshw
+        - pciutils
+        - net-tools
+        - vim
+        - dkms
+        - wget
+        - git
+        - epel-release
+        - ipa-client
+        - dialog
+        - tar
+        - unzip
+        - gcc
+        - cockpit
+  when: ansible_distribution == "CentOS" or ansible_distribution == "RedHat"
+
+- name: Instalacao de Requisitos - DEBIAN Family
+  apt:
+   name: "{{ packages }}"
+   state: latest
+  vars:
+   packages:
+        - dialog
+        - tree
+        - tcsh
+        - ansible
+        - lshw
+        - pciutils
+        - net-tools
+        - vim
+        - wget
+        - curl
+        - git
+        - ipa-client
+        - tar
+        - unzip
+        - gcc
+        - cockpit
+  when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"
+
+# Configurar Timezone para Sao Paulo
+- name: Configurando Timezone para Sao Paulo
+  file: src=/usr/share/zoneinfo/America/Sao_Paulo dest=/etc/localtime state=link force=yes

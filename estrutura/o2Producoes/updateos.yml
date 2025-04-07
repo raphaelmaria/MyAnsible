@@ -1,0 +1,81 @@
+---
+    - hosts: farmlinux 
+      remote_user: root
+      become: yes
+      become_user: root
+      order: sorted
+      tasks:
+      - name: Remove Softwares
+        yum:
+         name: "{{ packages }}"
+         state: absent
+        vars:
+            packages:
+                - cloud-init
+        when: ansible_distribution == "CentOS" or ansible_distribution == 'RedHat'
+
+      - name: Remove Softwares
+        apt:
+         name: "{{ packages }}"
+         state: absent
+        vars:
+          packages:
+                 - cloud-init
+        when: ansible_distribution == "Debian" or ansible_distribution == 'Ubuntu'        
+                  
+      - name: Install New Softwares
+        yum:
+         name: "{{ packages }}"
+         state: latest
+        vars:
+            packages:
+                - dialog
+                - tree
+                - wget
+                - tar
+                - unzip
+                - tcsh
+                - vim
+                - make
+                - gcc
+                - dnf
+                - autoconf
+                - automake
+                - epel-release
+                - cockpit
+                - ipa-client
+                - net-tools
+                - telnet
+                - curl
+                - tcpdump
+
+        when: ansible_distribution == "CentOS" or ansible_distribution == 'RedHat'
+
+      - name: Install New Softwares Debian Family
+        apt:
+         name: "{{ packages }}"
+         state: latest
+        vars:
+            packages:
+                - dialog
+                - tree
+                - wget
+                - tar
+                - unzip
+                - tcsh
+                - vim
+                - make
+                - gcc
+                - dnf
+                - autoconf
+                - automake
+                - epel-release
+                - cockpit
+                - ipa-client
+                - net-tools
+                - telnet
+                - curl
+                - tcpdump
+                
+        when: ansible_distribution == "Debian" or ansible_distribution == 'Ubuntu'        
+...

@@ -1,0 +1,22 @@
+---
+# INSTALL
+- name: Deploy FREEIPA --- INSTALL Red hat Family
+  yum:
+    name: freeipa-client
+    state: latest
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat'
+
+- name: Deploy FREEIPA --- INSTALL Debian Family
+  apt:
+    name: freeipa-client
+    state: latest
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+# CONFIGURE
+- name: Setup FREEIPA CLIENT --- Red Hat Family
+  
+  
+when: ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat'
+
+
+...

@@ -1,0 +1,23 @@
+#Simple Ansible Playbook to Get information from host
+---
+    - name: Getting information from host
+      hosts: macos_flash
+      gather_facts: true
+      tasks:
+        - name: Getting information
+          debug:
+            msg:
+             - Date: "{{ ansible_date_time.time }}"
+             - Hostname: "{{ ansible_nodename }}"
+             - Ip Address: "{{ ansible_all_ipv4_addresses }}"
+             - OS Family: "{{ ansible_os_family }}"
+             - Distro: "{{ ansible_distribution }}" 
+             - Os Major Version: "{{ ansible_distribution_major_version }}"
+             - Os Release: "{{ ansible_distribution_release }}" 
+             - Os Version: "{{ ansible_distribution_version }}"
+             - CPU: "{{ ansible_processor }}"
+             - CPU COre: "{{ ansible_processor_cores }}"
+             - VCPUS: "{{ ansible_processor_vcpus }}"
+             - Product Name: "{{ ansible_product_name }}"        
+             - Total Memory: "{{ ansible_memtotal_mb }}"
+...

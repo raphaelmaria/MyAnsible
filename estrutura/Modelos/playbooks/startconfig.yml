@@ -1,0 +1,9 @@
+---
+- hosts: farmlinux 
+  roles:
+    - updateos
+    - requisitos
+    #- hostname
+    #- ipaddress
+    - zabbix
+...

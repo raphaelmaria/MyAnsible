@@ -1,0 +1,7 @@
+- name: Default Begin Setup - Starting Deploy
+  hosts: grafana
+  remote_user: root
+  become: yes
+  become_user: root
+  roles:
+   - grafana
