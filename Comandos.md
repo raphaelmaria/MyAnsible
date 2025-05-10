@@ -1,3 +1,27 @@
+# Instalação Debian
+
+sudo apt -y install ansible vim ethtool python3-full
+
+# Utilitarios ansible-config
+- Comando utilizado para realizar a criação e/ou alteração do arquivo ansible.cfg
+- Permite a visualização de todas as configuração padrão aplicada ao Ansible.
+- Sintaxe:
+    ansible-config [opções] [argumentos]
+
+## Exemplos de "opções"
+  - list
+    - Exibe todas as configurações disponiveis
+  - dump
+    - Exibe todas as configurações disponiveis, e cruza com a aplicadas no arquivo.
+  - view
+    - Exibe as configurações dentro do arquivo ansible.cfg
+  - init
+    - Cria um arquivo de configuração inicial
+
+## Plugins disponiveis
+
+
+
 # Comandos Uteis
 
 O **`ansible-galaxy`** é uma ferramenta do Ansible para gerenciar **roles** e **coleções** (collections) da comunidade ou criadas internamente. Ele permite baixar, instalar, criar, remover e compartilhar componentes reutilizáveis.
